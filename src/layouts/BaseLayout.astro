@@ -10,8 +10,8 @@ interface Props {
 
 const {
     title,
-    description?: string;
-    } Astro.props;
+    description = "Abundant Life Church of God in Christ",
+    } = Astro.props;
 ---
 
 {/* Every page will uses this for consistency between navigation, footer, fonts,
