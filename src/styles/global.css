@@ -1,0 +1,29 @@
+/*This is as globals css file. It is for site-wide design choices.*/
+:root {
+  --color-primary: #3f1d5f;
+  --color-accent: #d4af37;
+  --color-text: #1f1f1f;
+  --color-background: #ffffff;
+  --max-width: 72rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+a {
+  color: inherit;
+}
