@@ -1,11 +1,17 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<BaseLayout>
-	<Welcome />
+<BaseLayout
+    title="Home"
+    description="Welcome to Abundant Life Church of God in Christ."
+>
+    <section class="container">
+        <h1>Welcome to Abundant Life Church of God in Christ</h1>
+        <p>Where the Spirit of God moves</p>
+        <a href="/visit">Plan Your Visit</a>
+    </section>
 </BaseLayout>
