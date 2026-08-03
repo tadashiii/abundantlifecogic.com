@@ -9,9 +9,151 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     title="Home"
     description="Welcome to Abundant Life Church of God in Christ."
 >
-    <section class="container">
-        <h1>Welcome to Abundant Life Church of God in Christ</h1>
-        <p>Where the Spirit of God moves</p>
-        <a href="/visit">Plan Your Visit</a>
+    <section class="hero">
+        <div class="container">
+            <p class="eyebrow">Welcome to</p>
+            <h1>Abundant Life Church of God in Christ</h1>
+            <p class="intro">
+                Where the spirit of God moves
+            </p>
+
+            <div class="actions">
+                <a class="button primary" href="/visit">Plan Your Visit</a>
+                <a class="button secondary" href="/give">Give Online</a>
+            </div>
+        </div>
     </section>
+
+    <section class="container section">
+        <h2>Join Us for Worship</h2>
+
+        <div class="cards">
+            <article class="card">
+                <h3>Sunday School</h3>
+                <p>Sunday 9:00 AM</p>
+            </article>
+
+            <article class="card">
+                <h3>Worship</h3>
+                <p>Sunday 10:00 AM</p>
+            </article>
+
+            <article class="card">
+                <h3>Location</h3>
+                <p>Church address • Sacramento, CA</p>
+                <a href="/visit">Get directions and details</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="container section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Stay connected</p>
+                <h2>Latest Announcements</h2>
+            </div>
+            <a href="a/announcements">View all announcements</a>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <p class="date">Coming soon</p>
+                <h3>Welcome to our new website</h3>
+                <p>Check back for church news, service updates, and community events.</p>
+            </article>
+
+            <article class="card">
+                <p class="date">Upcoming events</p>
+                <h3>See what's happening</h3>
+                <p>View the church calendar for services, gatherings, and special events.</p>
+                <a href="/events">View events</a>
+            </article>
+        </div>
+    </section>
+
 </BaseLayout>
+
+<style>
+    .hero {
+        padding: 6rem 0;
+        background: var(--color-primary);
+        color: white;
+    }
+
+    h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        line-height: 1.05;
+    }
+
+    .intro {
+        max-width: 620px;
+        font-size: 1.2rem;
+    }
+
+    .eyebrow,
+    .date {
+        color: var(--color-accent);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .section-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: end;
+        margin-bottom: 1.5rem;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .card h3 {
+        margin-top: 0;
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 0.8rem 1.1rem;
+        border-radius: 0.3rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .primary {
+        background: var(--color-accent);
+        color: #171717;
+    }
+
+    .secondary {
+        border: 1px solid white;
+        color: white;
+    }
+
+    @media (max-width: 600px) {
+        .section-heading {
+            align-items: start;
+            flex-direction: column;
+        }
+    }
+</style>
+
+
+
