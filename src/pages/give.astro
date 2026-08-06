@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Tithe">
+    <section class="container">
+        <h1>Give Online</h1>
+
+        <ul class="giving-links">
+            <li>
+                <a
+                    href="https://cash.app/$ablcogic916"
+                    target="_blank"
+                    rel="noopener noreffer"
+                >
+                    Give with Cash App
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://venmo.com/u/ablcogic916"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Give with Venmo
+                </a>
+            </li>
+
+            <li>
+                <strong>Zelle:</strong>
+                <a href="mailto:varnelldrones3@gmail.com">
+                    varnelldrones3@gmail.com
+                </a>
+            </li>
+        </ul>
+    </section>
+</BaseLayout>
+
+<style>
+    .giving-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+        list-style: none;
+    }
+</style>
