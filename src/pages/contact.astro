@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { church } from "../data/site";
+---
+
+<BaseLayout title="Contact" description="Contact Abundant Life Church of God in Christ in Sacramento by phone, email, or in person.">
+  <PageHero eyebrow="Get in touch" title="We would love to hear from you." intro="Connect with the church office, ask a question, or get help planning your visit." />
+  <section class="section">
+    <div class="container contact-grid">
+      <a class="contact-card" href={`tel:${church.phoneHref}`}><span aria-hidden="true">01</span><p>Call us</p><strong>{church.phoneDisplay}</strong><small>Tap to call the church office</small></a>
+      <a class="contact-card" href={`mailto:${church.email}`}><span aria-hidden="true">02</span><p>Email us</p><strong>{church.email}</strong><small>We’ll respond as soon as possible</small></a>
+      <a class="contact-card" href={church.mapUrl} target="_blank" rel="noreferrer"><span aria-hidden="true">03</span><p>Visit us</p><strong>{church.address}</strong><small>Open directions in Google Maps</small></a>
+    </div>
+  </section>
+  <section class="section section--tint">
+    <div class="container contact-note"><p class="eyebrow">Church office</p><h2>Need to speak with someone?</h2><p class="lead">Office availability may vary around services and ministry activities. Call or email ahead and a member of the church team will follow up with you.</p><a class="button button--primary" href={`mailto:${church.email}?subject=Website inquiry`}>Send an email</a></div>
+  </section>
+</BaseLayout>
+<style>.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.contact-card{display:flex;min-height:18rem;padding:2rem;border:1px solid var(--color-border);border-radius:1rem;flex-direction:column;text-decoration:none;background:white;transition:transform 160ms ease,box-shadow 160ms ease}.contact-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}.contact-card>span{margin-bottom:auto;color:#96712a;font-size:.72rem;font-weight:800;letter-spacing:.1em}.contact-card p{margin-bottom:.4rem;color:var(--color-muted)}.contact-card strong{font-family:Georgia,serif;font-size:1.25rem;line-height:1.25;overflow-wrap:anywhere}.contact-card small{margin-top:.8rem;color:var(--color-muted)}.contact-note{max-width:50rem}.contact-note .button{margin-top:.75rem}@media(max-width:800px){.contact-grid{grid-template-columns:1fr}.contact-card{min-height:14rem}}</style>

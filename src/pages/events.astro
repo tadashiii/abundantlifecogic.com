@@ -1,18 +1,17 @@
 ---
-import BaseLayout from"../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { church } from "../data/site";
 ---
 
-<BaseLayout title="Events">
-    <section class="container">
-        <h1>Church Calendar</h1>
-        <p>Do we need text here?</p>
-        <iframe
-            src="https://calendar.google.com/calendar/embed?src=ablcogic916%40gmail.com&ctz=America%2FLos_Angeles"
-            style="border: 0"
-            width="800"
-            height="600"
-            frameborder="0"
-            scrolling="no"
-        ></iframe>
-    </section>
+<BaseLayout title="Events" description="View upcoming services, gatherings, and events at Abundant Life Church of God in Christ.">
+  <PageHero eyebrow="Church calendar" title="Gather, grow, and serve together." intro="See upcoming services, ministry gatherings, and special events on the church calendar." />
+  <section class="section">
+    <div class="container calendar-shell">
+      <div class="calendar-header"><div><p class="eyebrow">Upcoming events</p><h2>Church calendar</h2></div><a class="button button--outline" href={church.linktree} target="_blank" rel="noreferrer">Open Linktree</a></div>
+      <div class="calendar-frame"><iframe src={church.calendarEmbedUrl} title="Abundant Life Church calendar" loading="lazy" scrolling="no"></iframe></div>
+      <p class="calendar-note">Calendar not displaying? <a href={`mailto:${church.email}`}>Contact the church office</a> for upcoming event information.</p>
+    </div>
+  </section>
 </BaseLayout>
+<style>.calendar-shell{max-width:64rem}.calendar-header{display:flex;margin-bottom:1.5rem;align-items:end;justify-content:space-between;gap:1rem}.calendar-header h2{margin:0}.calendar-frame{height:min(42rem,75vh);min-height:34rem;overflow:hidden;border:1px solid var(--color-border);border-radius:1.25rem;box-shadow:var(--shadow-soft);background:white}.calendar-frame iframe{width:100%;height:100%;border:0}.calendar-note{margin-top:1rem;color:var(--color-muted);font-size:.9rem}@media(max-width:600px){.calendar-header{align-items:flex-start;flex-direction:column}.calendar-frame{min-height:32rem}}</style>

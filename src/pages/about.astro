@@ -1,11 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { ministryTheme } from "../data/site";
 ---
 
-<BaseLayout title="About Us">
-    <section class="container">
-        <h1>About Us</h1>
-        <p>Insert church history, mission, vision etc here</p>
-    </section>
+<BaseLayout title="About Us" description="Learn about Abundant Life Church of God in Christ, our mission, values, and church family in Sacramento.">
+  <PageHero eyebrow="About Abundant Life" title="A church family growing in faith and serving in love." intro="We are a Church of God in Christ congregation in Sacramento, united in worship, discipleship, fellowship, and service." />
+  <section class="section">
+    <div class="container content-grid">
+      <article class="prose">
+        <p class="eyebrow">Our mission</p>
+        <h2>One body. One mission.</h2>
+        <p class="lead">{ministryTheme.mission}</p>
+      </article>
+      <aside class="scripture-card">
+        <span class="scripture-card__mark" aria-hidden="true">“</span>
+        <blockquote>{ministryTheme.motto}</blockquote>
+        <cite>{ministryTheme.scripture}</cite>
+      </aside>
+    </div>
+  </section>
+  <section class="section section--tint">
+    <div class="container">
+      <p class="eyebrow">What guides us</p>
+      <h2>Faith lived out together.</h2>
+      <div class="cards values">
+        <article class="card"><span>01</span><h3>Worship</h3><p>We gather to glorify God through prayer, praise, teaching, and fellowship.</p></article>
+        <article class="card"><span>02</span><h3>Discipleship</h3><p>We grow in God’s Word and encourage one another to live boldly in faith.</p></article>
+        <article class="card"><span>03</span><h3>Service</h3><p>We use our different gifts to strengthen the church and care for our community.</p></article>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
-
+<style>.values{margin-top:2rem}.values span{color:#96712a;font-size:.75rem;font-weight:800;letter-spacing:.12em}.values p{color:var(--color-muted)}</style>

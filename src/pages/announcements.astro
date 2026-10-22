@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Button from "../components/Button.astro";
+---
+
+<BaseLayout title="Announcements" description="Church announcements and updates from Abundant Life Church of God in Christ.">
+  <PageHero eyebrow="Stay connected" title="Church announcements." intro="Find the latest church updates, reminders, and community information here." />
+  <section class="section">
+    <div class="container empty-state">
+      <span aria-hidden="true">✦</span>
+      <p class="eyebrow">Check back soon</p>
+      <h2>No new announcements today.</h2>
+      <p>For service times and upcoming gatherings, visit the church calendar. You can also follow Abundant Life online for updates throughout the week.</p>
+      <div class="button-row"><Button href="/events">View the calendar</Button><Button href="/livestream" variant="outline">Follow online</Button></div>
+    </div>
+  </section>
+</BaseLayout>
+<style>.empty-state{max-width:44rem;padding:clamp(2rem,6vw,5rem);border:1px solid var(--color-border);border-radius:1.5rem;text-align:center;background:white;box-shadow:var(--shadow-soft)}.empty-state>span{display:grid;width:4rem;height:4rem;margin:0 auto 1.5rem;border-radius:50%;place-items:center;color:var(--color-primary);background:var(--color-accent-light);font-size:1.6rem}.empty-state>p:not(.eyebrow){color:var(--color-muted)}.empty-state .button-row{justify-content:center}</style>

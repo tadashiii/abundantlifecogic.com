@@ -1,48 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { church } from "../data/site";
 ---
 
-<BaseLayout title="Tithe">
-    <section class="container">
-        <h1>Give Online</h1>
-
-        <ul class="giving-links">
-            <li>
-                <a
-                    href="https://cash.app/$ablcogic916"
-                    target="_blank"
-                    rel="noopener noreffer"
-                >
-                    Give with Cash App
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="https://venmo.com/u/ablcogic916"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Give with Venmo
-                </a>
-            </li>
-
-            <li>
-                <strong>Zelle:</strong>
-                <a href="mailto:varnelldrones3@gmail.com">
-                    varnelldrones3@gmail.com
-                </a>
-            </li>
-        </ul>
-    </section>
+<BaseLayout title="Give" description="Giving options for Abundant Life Church of God in Christ, including Cash App, Venmo, and Zelle.">
+  <PageHero eyebrow="Generosity in action" title="Give to Abundant Life." intro="Thank you for supporting the worship, ministry, and community work of Abundant Life Church of God in Christ." />
+  <section class="section">
+    <div class="container giving-grid">
+      <a class="giving-card" href="https://cash.app/$ablcogic916" target="_blank" rel="noreferrer"><span>Cash App</span><h2>$ablcogic916</h2><p>Give securely through Cash App.</p><b>Open Cash App <span aria-hidden="true">↗</span></b></a>
+      <a class="giving-card" href="https://venmo.com/u/ablcogic916" target="_blank" rel="noreferrer"><span>Venmo</span><h2>@ablcogic916</h2><p>Give through the church Venmo profile.</p><b>Open Venmo <span aria-hidden="true">↗</span></b></a>
+      <article class="giving-card"><span>Zelle</span><h2>Give by email</h2><p>Send your gift through Zelle to:</p><strong>varnelldrones3@gmail.com</strong><small>Zelle gifts are completed through your bank’s app.</small></article>
+    </div>
+    <div class="container giving-note"><strong>Please verify before sending.</strong><p>Confirm that the recipient name matches the church’s approved account before completing a gift. For help, contact the church at <a href={`tel:${church.phoneHref}`}>{church.phoneDisplay}</a>.</p></div>
+  </section>
 </BaseLayout>
-
-<style>
-    .giving-links {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0;
-        list-style: none;
-    }
-</style>
+<style>.giving-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.giving-card{display:flex;min-height:22rem;padding:clamp(1.5rem,3vw,2.25rem);overflow:hidden;border:1px solid var(--color-border);border-radius:1.25rem;flex-direction:column;text-decoration:none;background:white;box-shadow:0 1px 0 rgba(40,20,55,.04);transition:transform 160ms ease,box-shadow 160ms ease}.giving-card[href]:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}.giving-card>span:first-child{margin-bottom:auto;color:#79511a;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.giving-card h2{font-size:clamp(1.7rem,3vw,2.3rem);overflow-wrap:anywhere}.giving-card p{color:var(--color-muted)}.giving-card b{margin-top:1rem;color:var(--color-primary)}.giving-card strong{color:var(--color-primary);overflow-wrap:anywhere}.giving-card small{margin-top:1rem;color:var(--color-muted)}.giving-note{display:grid;grid-template-columns:auto 1fr;gap:1rem;margin-top:2rem;padding:1.25rem 1.5rem;border-left:4px solid var(--color-accent);background:#f4edda}.giving-note p{margin:0}@media(max-width:850px){.giving-grid{grid-template-columns:1fr}.giving-card{min-height:17rem}}@media(max-width:560px){.giving-note{grid-template-columns:1fr}}</style>

@@ -1,35 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { ministries, ministryTheme } from "../data/site";
 ---
 
-<BaseLayout title="Auxiliary Ministries">
-    <section class="container">
-        <h1>Auxiliary Ministries</h1>
-
-        <ul class="ministry-links">
-            <a href="/ministries/deacons">Deacons</a>
-            <a href="/ministries/finance">Finance</a>
-            <a href="/ministries/hospitality">Hospitality</a>
-            <a href="/ministries/media">Media Team</a>
-            <a href="/ministries/men">Men's Ministry</a>
-            <a href="/ministries/missions">Missions</a>
-            <a href="/ministries/music">Music</a>
-            <a href="/ministries/outreach">Outreach</a>
-            <a href="/ministries/sundaySchool">Sunday School</a>
-            <a href="/ministries/ushers">Ushers</a>
-            <a href="/ministries/women">Women's Ministry</a>
-            <a href="/ministries/youth">Youth Ministry</a>
-        </ul>
-    </section>
+<BaseLayout title="Auxiliary Ministries" description="Explore the twelve auxiliary ministries of Abundant Life Church of God in Christ.">
+  <PageHero eyebrow={ministryTheme.motto} title={ministryTheme.title} intro={ministryTheme.mission} />
+  <section class="section">
+    <div class="container">
+      <div class="ministry-intro"><p class="eyebrow">Find your place</p><h2>Different gifts, united in service.</h2><p>Explore each ministry’s calling, guiding scripture, and mission.</p></div>
+      <div class="ministry-grid">
+        {ministries.map((ministry, index) => (
+          <a class="ministry-card" href={`/ministries/${ministry.slug}`}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div><h3>{ministry.name}</h3><p>{ministry.motto}</p><small>{ministry.scriptureReference}</small></div>
+            <b aria-hidden="true">→</b>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>
-
-<style>
-    .ministry-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        paddin: 0;
-        list-style: none;
-    }
-</style>
-
+<style>.ministry-intro{max-width:43rem;margin-bottom:2.5rem}.ministry-intro h2{margin-bottom:.75rem}.ministry-intro>p:last-child{color:var(--color-muted)}.ministry-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.ministry-card{display:grid;grid-template-columns:2rem 1fr auto;gap:1.1rem;padding:1.5rem;border:1px solid var(--color-border);border-radius:1rem;align-items:start;background:white;text-decoration:none;transition:transform 160ms ease,box-shadow 160ms ease}.ministry-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}.ministry-card>span{color:#96712a;font-size:.72rem;font-weight:800;letter-spacing:.1em}.ministry-card h3{margin-bottom:.35rem}.ministry-card p{margin-bottom:.8rem;color:var(--color-muted)}.ministry-card small{color:#79511a;font-weight:800}.ministry-card b{color:var(--color-primary);font-size:1.4rem}@media(max-width:720px){.ministry-grid{grid-template-columns:1fr}}</style>

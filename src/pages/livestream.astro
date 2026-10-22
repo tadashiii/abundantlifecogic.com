@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { church } from "../data/site";
+---
+
+<BaseLayout title="Watch & Connect" description="Watch Abundant Life Church of God in Christ on Facebook and YouTube and connect through social media.">
+  <PageHero eyebrow="Watch and connect" title="Join us wherever you are." intro="Watch services online and stay connected with the Abundant Life church family throughout the week." />
+  <section class="section">
+    <div class="container social-grid">
+      <a class="social-card featured" href={church.social.youtube} target="_blank" rel="noreferrer"><span>YouTube</span><h2>Watch on YouTube</h2><p>Visit the Abundant Life channel for livestreams and video updates.</p><b>Open YouTube <span aria-hidden="true">↗</span></b></a>
+      <a class="social-card featured" href={church.social.facebook} target="_blank" rel="noreferrer"><span>Facebook</span><h2>Watch on Facebook</h2><p>Follow the church page for live services, announcements, and community updates.</p><b>Open Facebook <span aria-hidden="true">↗</span></b></a>
+      <a class="social-card" href={church.social.instagram} target="_blank" rel="noreferrer"><span>Instagram</span><h3>@ablcogic916</h3><b>Follow <span aria-hidden="true">↗</span></b></a>
+      <a class="social-card" href={church.social.tiktok} target="_blank" rel="noreferrer"><span>TikTok</span><h3>@ablcogic916_</h3><b>Follow <span aria-hidden="true">↗</span></b></a>
+      <a class="social-card" href={church.linktree} target="_blank" rel="noreferrer"><span>All church links</span><h3>Abundant Life Linktree</h3><b>View links <span aria-hidden="true">↗</span></b></a>
+    </div>
+  </section>
+</BaseLayout>
+<style>.social-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}.social-card{grid-column:span 2;display:flex;min-height:14rem;padding:1.75rem;border:1px solid var(--color-border);border-radius:1rem;flex-direction:column;text-decoration:none;background:white;transition:transform 160ms ease,box-shadow 160ms ease}.social-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}.social-card.featured{grid-column:span 3;min-height:22rem;padding:clamp(1.75rem,4vw,3rem);color:white;background:linear-gradient(145deg,var(--color-primary),var(--color-primary-soft))}.social-card.featured h2{color:white}.social-card>span{margin-bottom:auto;color:#79511a;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.social-card.featured>span{color:var(--color-accent-light)}.social-card p{color:rgba(255,255,255,.72)}.social-card b{margin-top:1rem;color:inherit}.social-card:not(.featured) b{color:var(--color-primary)}@media(max-width:800px){.social-card,.social-card.featured{grid-column:span 3}}@media(max-width:560px){.social-grid{grid-template-columns:1fr}.social-card,.social-card.featured{grid-column:auto;min-height:14rem}}</style>

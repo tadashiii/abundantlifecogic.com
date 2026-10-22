@@ -1,10 +1,23 @@
 ---
-import BaseLayout from"../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Button from "../components/Button.astro";
+import { church } from "../data/site";
 ---
 
-<BaseLayout title="Pastor">
-    <section class="containter">
-        <h1>Pastor</h1>
-        <p>Insert biography on pastor here</p>
-    </section>
+<BaseLayout title="Our Pastor" description={`Meet Pastor ${church.pastor} of Abundant Life Church of God in Christ in Sacramento.`}>
+  <PageHero eyebrow="Pastoral leadership" title={`Pastor ${church.pastor}`} intro="Serving the Abundant Life church family in Sacramento." />
+  <section class="section">
+    <div class="container pastor-grid">
+      <div class="pastor-mark" aria-hidden="true"><img src="/alcogic-icon.svg" alt="" width="150" height="150" /></div>
+      <article class="prose">
+        <p class="eyebrow">A warm welcome</p>
+        <h2>We would be honored to worship with you.</h2>
+        <p class="lead">Pastor {church.pastor} and the Abundant Life church family invite you to join us for Sunday worship, Bible study, prayer, and fellowship.</p>
+        <p>Whether you are new to the Sacramento area, looking for a church home, or simply seeking a place to worship, you are welcome at Abundant Life.</p>
+        <div class="button-row"><Button href="/visit">Plan your visit</Button><Button href="/contact" variant="outline">Contact the church</Button></div>
+      </article>
+    </div>
+  </section>
 </BaseLayout>
+<style>.pastor-grid{display:grid;grid-template-columns:minmax(17rem,.7fr) minmax(0,1.3fr);gap:clamp(2rem,7vw,6rem);align-items:center}.pastor-mark{display:grid;min-height:26rem;place-items:center;border-radius:1.6rem;background:radial-gradient(circle,#fff 0 28%,transparent 29%),linear-gradient(135deg,#efe3bb,#d9b557);box-shadow:var(--shadow-soft)}.pastor-mark img{width:9.5rem;height:9.5rem;border-radius:50%;background:white}.button-row{margin-top:2rem}@media(max-width:700px){.pastor-grid{grid-template-columns:1fr}.pastor-mark{min-height:18rem}}</style>

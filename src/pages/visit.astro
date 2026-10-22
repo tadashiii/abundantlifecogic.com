@@ -1,10 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Button from "../components/Button.astro";
+import { church, services } from "../data/site";
 ---
 
-<BaseLayout title="Visit">
-    <section class="container">
-        <h1>Visit</h1>
-        <p>•add service schedule, address, parking info, and google map</p>
-    </section>
+<BaseLayout title="Plan Your Visit" description="Plan your visit to Abundant Life Church of God in Christ at 3150 Northgate Blvd in Sacramento.">
+  <PageHero eyebrow="You are invited" title="Plan your visit." intro="We look forward to welcoming you for worship, prayer, Bible study, and fellowship." />
+  <section class="section">
+    <div class="container">
+      <div class="section-intro"><p class="eyebrow">Service schedule</p><h2>Join us this week.</h2></div>
+      <div class="cards service-cards">
+        {services.map((service) => <article class="card"><p>{service.day}</p><h3>{service.name}</h3><strong>{service.time}</strong></article>)}
+      </div>
+    </div>
+  </section>
+  <section class="section section--tint">
+    <div class="container visit-grid">
+      <div class="visit-info">
+        <p class="eyebrow">Find us</p><h2>In the heart of North Sacramento.</h2>
+        <address>{church.address}</address>
+        <p><strong>Church office</strong><br />Please call or email for availability.</p>
+        <p><a href={`tel:${church.phoneHref}`}>{church.phoneDisplay}</a><br /><a href={`mailto:${church.email}`}>{church.email}</a></p>
+        <Button href={church.mapUrl} external>Get directions</Button>
+      </div>
+      <div class="map-wrap"><iframe src={church.mapEmbedUrl} title="Map showing Abundant Life Church of God in Christ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </section>
 </BaseLayout>
+<style>.section-intro{margin-bottom:2rem}.section-intro h2{margin-bottom:0}.service-cards{grid-template-columns:repeat(4,1fr)}.service-cards p{color:#79511a;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.service-cards strong{color:var(--color-primary)}.visit-grid{display:grid;grid-template-columns:minmax(18rem,.7fr) minmax(0,1.3fr);gap:clamp(2rem,6vw,5rem);align-items:center}.visit-info address{margin-bottom:1.5rem;font-family:Georgia,serif;font-size:1.3rem;font-style:normal}.map-wrap{min-height:28rem;overflow:hidden;border-radius:1.25rem;box-shadow:var(--shadow-soft)}.map-wrap iframe{width:100%;height:28rem;border:0}@media(max-width:900px){.service-cards{grid-template-columns:1fr 1fr}}@media(max-width:700px){.visit-grid{grid-template-columns:1fr}}@media(max-width:520px){.service-cards{grid-template-columns:1fr}}</style>
