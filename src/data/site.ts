@@ -31,14 +31,14 @@ export const services = [
 
 export const ministries = [
   {
-    slug: "deacons",
-    name: "Deacons Ministry",
-    scriptureReference: "1 Timothy 3:13 (KJV)",
+    slug: "finance",
+    name: "Finance Team",
+    scriptureReference: "1 Corinthians 4:2 (KJV)",
     scripture:
-      "For they that have used the office of a deacon well purchase to themselves a good degree, and great boldness in the faith which is in Christ Jesus.",
-    motto: "Serving Faithfully, Leading Humbly.",
+      "Moreover it is required in stewards, that a man be found faithful.",
+    motto: "Faithful Stewards of God’s Blessings.",
     mission:
-      "To serve God, support the pastoral leadership, and minister to the spiritual and practical needs of the congregation through faithful service, prayer, compassion, and godly leadership.",
+      "To honor God through responsible financial stewardship, maintaining integrity, accountability, and transparency while managing church resources to support ministry operations, outreach, and the advancement of God’s Kingdom.",
   },
   {
     slug: "van",
@@ -52,7 +52,7 @@ export const ministries = [
   },
   {
     slug: "hospitality",
-    name: "Hospitality Ministry",
+    name: "Hospitality Team",
     scriptureReference: "Hebrews 13:2 (KJV)",
     scripture:
       "Be not forgetful to entertain strangers: for thereby some have entertained angels unawares.",
@@ -72,7 +72,7 @@ export const ministries = [
   },
   {
     slug: "men",
-    name: "Men’s Ministry",
+    name: "Men's Department",
     scriptureReference: "Proverbs 27:17 (KJV)",
     scripture:
       "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.",
@@ -112,7 +112,7 @@ export const ministries = [
   },
   {
     slug: "sundaySchool",
-    name: "Sunday School Ministry",
+    name: "Sunday School",
     scriptureReference: "2 Timothy 2:15 (KJV)",
     scripture:
       "Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.",
@@ -122,7 +122,7 @@ export const ministries = [
   },
   {
     slug: "ushers",
-    name: "Ushers Ministry",
+    name: "Usher Board",
     scriptureReference: "Psalm 84:10 (KJV)",
     scripture:
       "For a day in thy courts is better than a thousand. I had rather be a doorkeeper in the house of my God, than to dwell in the tents of wickedness.",
@@ -132,7 +132,7 @@ export const ministries = [
   },
   {
     slug: "women",
-    name: "Women’s Ministry",
+    name: "Women’s Department",
     scriptureReference: "Proverbs 31:26 (KJV)",
     scripture:
       "She openeth her mouth with wisdom; and in her tongue is the law of kindness.",
@@ -142,7 +142,7 @@ export const ministries = [
   },
   {
     slug: "youth",
-    name: "Youth Ministry",
+    name: "Youth Department",
     scriptureReference: "1 Timothy 4:12 (KJV)",
     scripture:
       "Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity.",
