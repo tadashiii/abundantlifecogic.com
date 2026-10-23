@@ -1,0 +1,38 @@
+---
+import PageHero from "./PageHero.astro";
+import { church, ministries } from "../data/site";
+
+interface Props { slug: (typeof ministries)[number]["slug"]; }
+const { slug } = Astro.props;
+const ministry = ministries.find((item) => item.slug === slug);
+if (!ministry) throw new Error(`Unknown ministry: ${slug}`);
+---
+
+<PageHero eyebrow="Auxiliary Ministry" title={ministry.name} intro={ministry.motto} />
+<section class="section">
+  <div class="container content-grid">
+    <article class="prose">
+      <p class="eyebrow">Our mission</p>
+      <h2>Serving with purpose</h2>
+      <p class="lead">{ministry.mission}</p>
+    </article>
+    <aside class="scripture-card" aria-label={`${ministry.name} scripture`}>
+      <span class="scripture-card__mark" aria-hidden="true">“</span>
+      <blockquote>{ministry.scripture}</blockquote>
+      <cite>{ministry.scriptureReference}</cite>
+    </aside>
+  </div>
+</section>
+<section class="section section--tint">
+  <div class="container callout-row">
+    <div>
+      <p class="eyebrow">Get connected</p>
+      <h2>There is a place for you to serve.</h2>
+      <p>Contact the church office to learn more about {ministry.name}.</p>
+    </div>
+    <div class="button-row">
+      <a class="button button--primary" href={`mailto:${church.email}`}>Email the church</a>
+      <a class="button button--outline" href="/ministries">All ministries</a>
+    </div>
+  </div>
+</section>

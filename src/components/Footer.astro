@@ -1,21 +1,38 @@
-<footer>
-    <div class="container">
-        <strong>Abundant Life Church of God in Christ</strong>
-        <p>3150 Northgate BLVD • Sacramento, CA</p>
-        <p>Service times: Sunday School 9:00 AM • Worship 10:00 AM</p>
-        <p><a href="/contact">Contact Us</a> • <a href="/give">Give Online</a></p>
+---
+import { church } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="/alcogic-icon.svg" alt="" width="64" height="64" />
+      <div><strong>{church.name}</strong><p>{church.tagline}</p></div>
     </div>
+    <div>
+      <h2>Visit</h2>
+      <address><a href={church.mapUrl} target="_blank" rel="noreferrer">{church.address}</a></address>
+      <p>Sunday School at 9:00 AM<br />Worship at 10:00 AM</p>
+    </div>
+    <div>
+      <h2>Connect</h2>
+      <ul class="footer-links">
+        <li><a href={`tel:${church.phoneHref}`}>{church.phoneDisplay}</a></li>
+        <li><a href={`mailto:${church.email}`}>{church.email}</a></li>
+        <li><a href="/contact">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Follow</h2>
+      <ul class="footer-links">
+        <li><a href={church.social.facebook} target="_blank" rel="noreferrer">Facebook</a></li>
+        <li><a href={church.social.youtube} target="_blank" rel="noreferrer">YouTube</a></li>
+        <li><a href={church.social.instagram} target="_blank" rel="noreferrer">Instagram</a></li>
+        <li><a href={church.linktree} target="_blank" rel="noreferrer">Linktree</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {new Date().getFullYear()} {church.shortName}. All rights reserved.</p>
+    <div><a href="/announcements">Announcements</a><a href="/give">Give</a></div>
+  </div>
 </footer>
-
-<style>
-    footer {
-        margin-top: 4rem;
-        padding: 2rem 0;
-        background: #171717;
-        color: white;
-    }
-
-    a {
-        color: white;
-    }
-</style>

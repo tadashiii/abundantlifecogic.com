@@ -1,43 +1,42 @@
-<header>
-    <div class="container header-content">
-        <a href="/" class="logo">Abundant Life COGIC</a>
+---
+import { church } from "../data/site";
 
-        <nav aria-label="Main navigation">
-            <a href="/about">About</a>
-            <a href="/pastor">Pastor</a>
-            <a href="/visit">Visit</a>
-            <a href="/events">Events</a>
-            <a href="/contact">Contact</a>
-            <a href="/give">Give</a>
-            <a href="/ministries">Auxiliary Ministries</a>
-        </nav>
-    </div>
+const pathname = Astro.url.pathname;
+const navItems = [
+  { href: "/about", label: "About" },
+  { href: "/pastor", label: "Pastor" },
+  { href: "/visit", label: "Visit" },
+  { href: "/ministries", label: "Ministries" },
+  { href: "/events", label: "Events" },
+  { href: "/livestream", label: "Watch" },
+];
+const isActive = (href: string) => pathname.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="container header-content">
+    <a href="/" class="brand" aria-label={`${church.shortName} home`}>
+      <img src="/alcogic-icon.svg" alt="" width="48" height="48" />
+      <span><strong>Abundant Life</strong><small>Church of God in Christ</small></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {navItems.map((item) => (
+        <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+      ))}
+      <a class="nav-give" href="/give">Give</a>
+    </nav>
+
+    <details class="mobile-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile navigation">
+        {navItems.map((item) => (
+          <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+        ))}
+        <a href="/announcements">Announcements</a>
+        <a href="/contact">Contact</a>
+        <a href="/give">Give</a>
+      </nav>
+    </details>
+  </div>
 </header>
-
-<style>
-    header {
-        padding: 1rem 0;
-        background: var(--color-primary);
-        color: white;
-    }
-
-    .header-content {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .logo {
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-</style>
-
-
