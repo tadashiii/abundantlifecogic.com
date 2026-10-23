@@ -2,7 +2,7 @@ export const church = {
   name: "Abundant Life Church of God in Christ",
   shortName: "Abundant Life COGIC",
   tagline: "Where the Spirit of God moves",
-  address: "3150 Northgate Blvd, Sacramento, CA 95833",
+  address: "3150 Northgate Blvd,\nSacramento, CA 95833",
   phoneDisplay: "(916) 885-7035",
   phoneHref: "+19168857035",
   email: "ablcogic916@gmail.com",
