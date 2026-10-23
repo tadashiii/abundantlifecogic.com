@@ -45,10 +45,10 @@ export const ministries = [
     name: "Van Ministry",
     scriptureReference: "Luke 14:23 (KJV)",
     scripture:
-      "And the lord said unto the servant, Go out into the highways and hedges, and compel them to come in, that my house may be filled.",
+      "And the Lord said unto the servant, Go out into the highways and hedges, and compel them to come in, that my house may be filled.",
     motto: "Driven to Serve, Bringing Souls Together.",
     mission:
-      "To provide safe, dependable, and welcoming transportation that helps individuals and families attend worship, fellowship, and church activities, removing transportation barrierss and extending Christlike care throughout the community.",
+      "To provide safe, dependable, and welcoming transportation that helps individuals and families attend worship, fellowship, and church activities, removing transportation barriers and extending Christlike care throughout the community.",
   },
   {
     slug: "hospitality",
