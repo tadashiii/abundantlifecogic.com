@@ -1,7 +1,7 @@
 export const church = {
   name: "Abundant Life Church of God in Christ",
   shortName: "Abundant Life COGIC",
-  tagline: "Where the Spirit of God moves.",
+  tagline: "Where the Spirit of God moves",
   address: "3150 Northgate Blvd, Sacramento, CA 95833",
   phoneDisplay: "(916) 885-7035",
   phoneHref: "+19168857035",
@@ -27,6 +27,8 @@ export const services = [
   { name: "Sunday Worship", day: "Sunday", time: "10:00 AM–12:00 PM" },
   { name: "Noon Day Prayer", day: "Wednesday", time: "12:00–1:00 PM" },
   { name: "Bible Study", day: "Wednesday", time: "7:00–8:00 PM" },
+  { name: "New Beginnings Class", day: "Friday", time: "5:30-7:30 PM" },
+  { name: "Outreach", day: "Saturday", time: "10:00-12:00 PM" },
 ];
 
 export const ministries = [
@@ -78,7 +80,7 @@ export const ministries = [
       "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.",
     motto: "Iron Sharpens Iron, Brothers Strengthen Brothers.",
     mission:
-      "To equip, encourage, and empower men to grow spiritually, lead with integrity, strengthen their families, and develop meaningful brotherhood through prayer, discipleship, mentorship, and service to God and the community.",
+      "To equip, encourage, and empower men to grow spiritually, lead with integrity, strengthen their families, and develop meaningful brotherhood through prayer, discipleship, and mentorship, while honoring the sacred calling of deaconship through faithful service to God and the community.",
   },
   {
     slug: "youngadult",
